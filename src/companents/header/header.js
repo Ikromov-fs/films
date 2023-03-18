@@ -12,7 +12,7 @@ const Header = () => {
     const [inputData, setInputData] = useState(false)
     const { data, setData } = useContext(Context)
     const valueInp = (e) => {
-        if (e.target.value == '') {
+        if (e.target.value === '') {
             setInputData('')
         }
         else {
@@ -56,11 +56,11 @@ const Header = () => {
                             <input onBlur={hiddenSearch} ref={inputValue} onChange={valueInp} type="text" className='form-control' placeholder='search...' />
                             {
                                 inputData && (<div>
-                                    <ul className='w-100 ul-soarch'>
-                                        {searchData.length > 0 && searchData.map(item => (
-                                            <li id={item.id} onClick={liChange} className='my-2 search-li' key={item.id}>{item.title}</li>
-                                        ))}
-                                    </ul>
+                                    {searchData.length > 0 && searchData.map(item => (
+                                        <ul className='w-100 ul-soarch' key={item.id} >
+                                            <li id={item.id} onClick={liChange} className='my-2 search-li'>{item.title}</li>
+                                        </ul>
+                                    ))}
                                 </div>)
                             }
                         </div>

@@ -46,7 +46,7 @@ const Singl = () => {
             <div className='w-25 mx-auto'>
                 {
                     image.splice(3, 3).map(item => {
-                        return <div className='p-2 text-center'><img key={item.id} src={"https://image.tmdb.org/t/p/w500" + item.profile_path} alt="img" width={'90%'} height='30%' /></div>
+                        return <div className='p-2 text-center' key={item.id} ><img src={"https://image.tmdb.org/t/p/w500" + item.profile_path} alt="img" width={'90%'} height='30%' /></div>
                     })
                 }
             </div>
